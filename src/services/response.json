@@ -1,0 +1,39 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "description": "Premium noise-cancelling headphones with 30-hour battery life",
+            "price": 199.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/headphones.jpg"
+        },
+        {
+            "id": 2,
+            "description": "Premium noise-cancelling headphones with 30-hour battery life",
+            "price": 199.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/headphones.jpg"
+        },
+        {
+            "id": 3,
+            "description": "Premium noise-cancelling headphones with 30-hour battery life",
+            "price": 199.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/headphones.jpg"
+        },
+        {
+            "id": 4,
+            "description": "Premium noise-cancelling headphones with 30-hour battery life",
+            "price": 199.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/headphones.jpg"
+        },
+        {
+            "id": 5,
+            "description": "Premium noise-cancelling headphones with 30-hour battery life",
+            "price": 199.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/headphones.jpg"
+        }
+    ]
+}
