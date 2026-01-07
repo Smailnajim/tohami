@@ -5,24 +5,24 @@ function Hero() {
             <div className="hero-container">
                 <div className="hero-content">
                     <div className="hero-badge">
-                        <span>✨</span>
+                        <span>🌟</span>
                         <span>New Collection 2026</span>
                     </div>
                     <h1 className="hero-title">
-                        Elevate Your <span>Living Space</span> With Timeless Elegance
+                        Design Your <span>Dream Home</span> With Style
                     </h1>
                     <p className="hero-description">
-                        Discover our curated collection of premium tables and couches,
-                        designed to transform your home into a sanctuary of style and comfort.
+                        Discover handcrafted furniture that brings personality to every room.
+                        Premium quality, modern designs, timeless comfort.
                     </p>
                     <div className="hero-buttons">
                         <a href="#products" className="btn btn-primary">
-                            Shop Collection
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            Shop Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
-                        <a href="#about" className="btn btn-secondary">Learn More</a>
+                        <a href="#about" className="btn btn-secondary">Explore More</a>
                     </div>
                     <div className="hero-stats">
                         <div className="stat-item">
@@ -43,7 +43,7 @@ function Hero() {
                 <div className="hero-image-wrapper">
                     <img
                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800"
-                        alt="Luxury Living Room"
+                        alt="Modern Living Room"
                         className="hero-image"
                     />
                     <div className="hero-floating-card card-1">
@@ -65,8 +65,8 @@ function Hero() {
                                 </svg>
                             ))}
                         </div>
-                        <h4 style={{ fontSize: '0.9rem', color: '#1a1a1a' }}>4.9/5 Rating</h4>
-                        <p style={{ fontSize: '0.8rem', color: '#9CA3AF' }}>2,500+ Reviews</p>
+                        <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#111' }}>4.9/5 Rating</h4>
+                        <p style={{ fontSize: '0.8rem', color: '#737373' }}>2,500+ Reviews</p>
                     </div>
                 </div>
             </div>

@@ -3,13 +3,13 @@ function Newsletter() {
         <section className="newsletter" id="contact">
             <div className="newsletter-pattern"></div>
             <div className="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter for exclusive offers and design inspiration</p>
+                <h2>Join the Community</h2>
+                <p>Get exclusive deals, design tips, and early access to new collections</p>
                 <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
                     <input
                         type="email"
                         className="newsletter-input"
-                        placeholder="Enter your email address"
+                        placeholder="Enter your email"
                     />
                     <button type="submit" className="btn btn-primary">Subscribe</button>
                 </form>
