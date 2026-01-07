@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import data from '../services/response.json';
 
 function Projects() {
@@ -22,12 +23,12 @@ function Projects() {
                                 <div className="project-overlay">
                                     <span className="project-category">{project.category}</span>
                                     <h3 className="project-title">{project.title}</h3>
-                                    <a href="#" className="project-link">
+                                    <Link to={`/projects/${project.id}`} className="project-link">
                                         View Project
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                         </svg>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -35,12 +36,12 @@ function Projects() {
                 </div>
 
                 <div className="projects-cta">
-                    <a href="#contact" className="btn btn-primary">
+                    <Link to="/contact" className="btn btn-primary">
                         Start Your Project
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

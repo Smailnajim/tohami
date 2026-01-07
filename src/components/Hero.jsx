@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Hero() {
     return (
         <section className="hero">
@@ -16,13 +18,13 @@ function Hero() {
                         Premium quality, modern designs, timeless comfort.
                     </p>
                     <div className="hero-buttons">
-                        <a href="#products" className="btn btn-primary">
+                        <Link to="/products" className="btn btn-primary">
                             Shop Now
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
-                        </a>
-                        <a href="#about" className="btn btn-secondary">Explore More</a>
+                        </Link>
+                        <Link to="/about" className="btn btn-secondary">Explore More</Link>
                     </div>
                     <div className="hero-stats">
                         <div className="stat-item">

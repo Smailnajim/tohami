@@ -1,4 +1,5 @@
-import { Header, Footer, Categories } from '../components';
+import { Link } from 'react-router-dom';
+import { Header, Footer } from '../components';
 
 function CategoriesPage() {
     return (
@@ -29,12 +30,12 @@ function CategoriesPage() {
                                     <div className="category-content">
                                         <h3>Couches & Sofas</h3>
                                         <p>Discover comfort redefined with our luxurious seating collection</p>
-                                        <a href="/products" className="category-link">
+                                        <Link to="/products" className="category-link">
                                             View Collection
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -48,12 +49,12 @@ function CategoriesPage() {
                                     <div className="category-content">
                                         <h3>Dining Tables</h3>
                                         <p>Elegant tables for memorable gatherings</p>
-                                        <a href="/products" className="category-link">
+                                        <Link to="/products" className="category-link">
                                             View Collection
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -67,12 +68,12 @@ function CategoriesPage() {
                                     <div className="category-content">
                                         <h3>Coffee Tables</h3>
                                         <p>Stylish centerpieces for your living room</p>
-                                        <a href="/products" className="category-link">
+                                        <Link to="/products" className="category-link">
                                             View Collection
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -86,12 +87,12 @@ function CategoriesPage() {
                                     <div className="category-content">
                                         <h3>Accent Chairs</h3>
                                         <p>Statement pieces that define your style</p>
-                                        <a href="/products" className="category-link">
+                                        <Link to="/products" className="category-link">
                                             View Collection
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
