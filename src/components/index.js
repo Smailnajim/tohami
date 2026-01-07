@@ -5,3 +5,4 @@ export { default as Categories } from './Categories';
 export { default as Features } from './Features';
 export { default as Newsletter } from './Newsletter';
 export { default as ProductCard } from './ProductCard';
+export { default as Projects } from './Projects';

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,17 +14,20 @@ function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const isActive = (path) => location.pathname === path;
+
     return (
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <nav className="nav-container">
-                <a href="#" className="logo">LUXE<span>HOME</span></a>
+                <Link to="/" className="logo">LUXE<span>HOME</span></Link>
 
                 <ul className="nav-menu">
-                    <li><a href="#" className="nav-link">Home</a></li>
-                    <li><a href="#categories" className="nav-link">Categories</a></li>
-                    <li><a href="#products" className="nav-link">Products</a></li>
-                    <li><a href="#about" className="nav-link">About</a></li>
-                    <li><a href="#contact" className="nav-link">Contact</a></li>
+                    <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link></li>
+                    <li><Link to="/categories" className={`nav-link ${isActive('/categories') ? 'active' : ''}`}>Categories</Link></li>
+                    <li><Link to="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`}>Products</Link></li>
+                    <li><Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`}>Projects</Link></li>
+                    <li><Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>About</Link></li>
+                    <li><Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</Link></li>
                 </ul>
 
                 <div className="nav-actions">
