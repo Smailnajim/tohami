@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { addToCart } from '../utils/cart';
 
 function ProductModal({ product, formatPrice, onClose }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [added, setAdded] = useState(false);
 
     if (!product) return null;
 
@@ -15,6 +17,17 @@ function ProductModal({ product, formatPrice, onClose }) {
 
     const prevImage = () => {
         setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const handleAddToCart = () => {
+        addToCart(product);
+        setAdded(true);
+
+        // Notify header to update cart count
+        window.dispatchEvent(new Event('cartUpdated'));
+
+        // Reset after 2 seconds
+        setTimeout(() => setAdded(false), 2000);
     };
 
     return (
@@ -115,11 +128,25 @@ function ProductModal({ product, formatPrice, onClose }) {
                         </div>
 
                         <div className="modal-actions">
-                            <button className="btn btn-primary btn-large">
-                                Add to Cart
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                </svg>
+                            <button
+                                className={`btn btn-primary btn-large ${added ? 'added' : ''}`}
+                                onClick={handleAddToCart}
+                            >
+                                {added ? (
+                                    <>
+                                        Added to Cart!
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </>
+                                ) : (
+                                    <>
+                                        Add to Cart
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                    </>
+                                )}
                             </button>
                         </div>
                     </div>

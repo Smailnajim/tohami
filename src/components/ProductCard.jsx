@@ -1,6 +1,23 @@
+import { useState } from 'react';
+import { addToCart } from '../utils/cart';
+
 function ProductCard({ product, formatPrice, onQuickView }) {
+    const [added, setAdded] = useState(false);
+
     // Use first image from array or fallback
     const mainImage = product.images ? product.images[0] : product.image;
+
+    const handleAddToCart = (e) => {
+        e.stopPropagation();
+        addToCart(product);
+        setAdded(true);
+
+        // Notify header to update cart count
+        window.dispatchEvent(new Event('cartUpdated'));
+
+        // Reset after 2 seconds
+        setTimeout(() => setAdded(false), 2000);
+    };
 
     return (
         <div className="product-card">
@@ -43,13 +60,19 @@ function ProductCard({ product, formatPrice, onQuickView }) {
                         </svg>
                     </button>
                     <button
-                        className="product-action-btn"
-                        title="Add to Cart"
-                        onClick={(e) => e.stopPropagation()}
+                        className={`product-action-btn ${added ? 'added' : ''}`}
+                        title={added ? 'Added!' : 'Add to Cart'}
+                        onClick={handleAddToCart}
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
+                        {added ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        )}
                     </button>
                 </div>
                 {/* Mobile tap indicator */}

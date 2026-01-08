@@ -7,3 +7,4 @@ export { default as Newsletter } from './Newsletter';
 export { default as ProductCard } from './ProductCard';
 export { default as ProductModal } from './ProductModal';
 export { default as Projects } from './Projects';
+export { default as CartSidebar } from './CartSidebar';
