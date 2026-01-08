@@ -448,6 +448,16 @@ body {
     justify-content: center;
 }
 
+.whatsapp-checkout {
+    background: #25D366 !important;
+    border-color: #25D366 !important;
+}
+
+.whatsapp-checkout:hover {
+    background: #128C7E !important;
+    border-color: #128C7E !important;
+}
+
 /* ============================================
    HERO
    ============================================ */
