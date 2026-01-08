@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Header, Footer, ProductCard } from '../components';
+import { Header, Footer, ProductCard, ProductModal } from '../components';
 import data from '../services/response.json';
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [filter, setFilter] = useState('All');
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
         setProducts(data.products);
@@ -19,6 +20,16 @@ function ProductsPage() {
             style: 'currency',
             currency: 'USD'
         }).format(price);
+    };
+
+    const handleQuickView = (product) => {
+        setSelectedProduct(product);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const handleCloseModal = () => {
+        setSelectedProduct(null);
+        document.body.style.overflow = 'auto';
     };
 
     return (
@@ -53,6 +64,7 @@ function ProductsPage() {
                                     key={product.id}
                                     product={product}
                                     formatPrice={formatPrice}
+                                    onQuickView={handleQuickView}
                                 />
                             ))}
                         </div>
@@ -60,6 +72,14 @@ function ProductsPage() {
                 </section>
             </main>
             <Footer />
+
+            {selectedProduct && (
+                <ProductModal
+                    product={selectedProduct}
+                    formatPrice={formatPrice}
+                    onClose={handleCloseModal}
+                />
+            )}
         </>
     );
 }
