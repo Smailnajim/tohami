@@ -1,5 +1,21 @@
+import { useState } from 'react';
+
 function ProductModal({ product, formatPrice, onClose }) {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
     if (!product) return null;
+
+    // Support both images array and single image
+    const images = product.images || [product.image];
+    const currentImage = images[currentImageIndex];
+
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
 
     return (
         <div className="modal-overlay" onClick={onClose}>
@@ -12,11 +28,49 @@ function ProductModal({ product, formatPrice, onClose }) {
 
                 <div className="modal-grid">
                     <div className="modal-image">
-                        <img src={product.image} alt={product.name} />
+                        <img src={currentImage} alt={product.name} />
                         {product.badge && (
                             <span className={`product-badge ${product.badge.toLowerCase().replace(' ', '-')}`}>
                                 {product.badge}
                             </span>
+                        )}
+
+                        {/* Image navigation arrows */}
+                        {images.length > 1 && (
+                            <>
+                                <button className="image-nav prev" onClick={prevImage}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                                <button className="image-nav next" onClick={nextImage}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </>
+                        )}
+
+                        {/* Image thumbnails */}
+                        {images.length > 1 && (
+                            <div className="image-thumbnails">
+                                {images.map((img, index) => (
+                                    <button
+                                        key={index}
+                                        className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                                        onClick={() => setCurrentImageIndex(index)}
+                                    >
+                                        <img src={img} alt={`${product.name} view ${index + 1}`} />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Image counter */}
+                        {images.length > 1 && (
+                            <div className="image-counter">
+                                {currentImageIndex + 1} / {images.length}
+                            </div>
                         )}
                     </div>
 
