@@ -6,6 +6,7 @@ import CartSidebar from './CartSidebar';
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [cart, setCart] = useState([]);
     const [cartCount, setCartCount] = useState(0);
     const location = useLocation();
@@ -61,6 +62,14 @@ function Header() {
                 <nav className="nav-container">
                     <Link to="/" className="logo">LUXE<span>HOME</span></Link>
 
+                    {/* Hamburger Icon for Mobile */}
+                    <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+                        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+                        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+                        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+                    </button>
+
+                    {/* Desktop Navigation */}
                     <ul className="nav-menu">
                         <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link></li>
                         <li><Link to="/categories" className={`nav-link ${isActive('/categories') ? 'active' : ''}`}>Categories</Link></li>
@@ -69,6 +78,18 @@ function Header() {
                         <li><Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>About</Link></li>
                         <li><Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</Link></li>
                     </ul>
+
+                    {/* Mobile Navigation Drawer */}
+                    <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+                        <ul className="mobile-nav-links">
+                            <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+                            <li><Link to="/categories" className={`nav-link ${isActive('/categories') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Categories</Link></li>
+                            <li><Link to="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Products</Link></li>
+                            <li><Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
+                            <li><Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>About</Link></li>
+                            <li><Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+                        </ul>
+                    </div>
 
                     <div className="nav-actions">
                         <button
