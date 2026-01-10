@@ -6,7 +6,7 @@ function Footer() {
             <div className="footer-container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <Link to="/" className="logo">LUXE<span>HOME</span></Link>
+                        <Link to="/" className="logo">TOUHAMI<span>DECOR</span></Link>
                         <p>
                             Crafting beautiful living spaces with premium furniture and exceptional design.
                             Your home deserves the best.
@@ -72,7 +72,7 @@ function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; 2026 LuxeHome. All rights reserved.</p>
+                    <p>&copy; 2026 Touhami Decor. All rights reserved.</p>
                     <div className="footer-legal">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>

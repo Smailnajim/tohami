@@ -30,7 +30,7 @@ function CartSidebar({ isOpen, onClose, cart, onCartUpdate }) {
 
     const handleCheckout = () => {
         // Build WhatsApp message with order details
-        let message = '🛒 *New Order from LUXEHOME*\n\n';
+        let message = '🛒 *New Order from TOUHAMI DECOR*\n\n';
         message += '📦 *Order Details:*\n';
         message += '─────────────────\n';
 
