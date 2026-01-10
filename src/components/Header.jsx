@@ -60,7 +60,9 @@ function Header() {
         <>
             <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
                 <nav className="nav-container">
-                    <Link to="/" className="logo">LUXE<span>HOME</span></Link>
+                    <Link to="/" className="logo">
+                        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Touhami Decor" className="logo-img" />
+                    </Link>
 
                     {/* Hamburger Icon for Mobile */}
                     <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
