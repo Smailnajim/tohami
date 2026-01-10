@@ -105,7 +105,7 @@ function Header() {
                             )}
                         </button>
                         <a
-                            href="https://wa.me/212620491248"
+                            href="https://wa.me/212708563812"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="nav-icon-btn whatsapp-btn"

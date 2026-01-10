@@ -2,7 +2,7 @@ import { removeFromCart, updateQuantity, clearCart } from '../utils/cart';
 
 function CartSidebar({ isOpen, onClose, cart, onCartUpdate }) {
 
-    const WHATSAPP_NUMBER = '212620491248';
+    const WHATSAPP_NUMBER = '212708563812';
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('en-US', {
